@@ -1,0 +1,33 @@
+--Create a music store database
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, item TEXT, section TEXT, price INTEGER, difficulty INTEGER);
+
+INSERT INTO store VALUES (1, "guitar", "string", 800, 3);
+INSERT INTO store VALUES (2, "bass guitar", "string", 700, 2);
+INSERT INTO store VALUES (3, "violin", "string", 300, 4);
+INSERT INTO store VALUES (4, "viola", "string", 300, 4);
+INSERT INTO store VALUES (5, "flute", "woodwind", 200, 2);
+INSERT INTO store VALUES (6, "clarinet", "woodwind", 300, 3);
+INSERT INTO store VALUES (7, "saxophone", "brass", 200, 4);
+INSERT INTO store VALUES (8, "french horn", "brass", 500, 5);
+INSERT INTO store VALUES (9, "tuba", "brass", 900, 3);
+INSERT INTO store VALUES (10, "trumpet", "brass", 300, 4);
+INSERT INTO store VALUES (11, "triangle", "percussion", 30, 1);
+INSERT INTO store VALUES (12, "drum set", "percussion", 1000, 3);
+INSERT INTO store VALUES (13, "xylophone", "percussion", 200, 2);
+INSERT INTO store VALUES (14, "baritone", "brass", 300, 2);
+INSERT INTO store VALUES (15, "bagpipes", "woodwind", 900, 5);
+
+--display the database ordered by price
+SELECT * FROM store
+ORDER BY price asc;
+
+-average price of items in the string section
+SELECT AVG(price) "avg string item price"
+FROM store
+where section='string';
+
+-what are the least difficult instruments?
+SELECT item, price, difficulty
+FROM store
+order by difficulty asc;
