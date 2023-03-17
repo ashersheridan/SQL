@@ -22,12 +22,12 @@ INSERT INTO store VALUES (15, "bagpipes", "woodwind", 900, 5);
 SELECT * FROM store
 ORDER BY price asc;
 
--average price of items in the string section
+--average price of items in the string section
 SELECT AVG(price) "avg string item price"
 FROM store
 where section='string';
 
--what are the least difficult instruments?
+--what are the least difficult instruments?
 SELECT item, price, difficulty
 FROM store
 order by difficulty asc;
